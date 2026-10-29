@@ -1,24 +1,24 @@
-# FK Fish Farm Bot Minecraft 🎣
+# AFK Fish Farm Bot Minecraft 🎣
 
-A simple Python-based Minecraft fishing bot that automatically detects the fishing bobber using image recognition and performs a right-click when the bobber is detected.
+A Python-based Minecraft fishing bot that uses image recognition to detect the **“Fishing Bobber Splashes”** subtitle. When the subtitle appears on screen, the bot automatically performs a right-click.
 
 ## ✨ Features
 
-- 🎯 Detects the fishing bobber using OpenCV template matching.
+- 🎯 Detects the **“Fishing Bobber Splashes”** subtitle using OpenCV template matching.
 - 🖥️ Scans the bottom-right area of the screen.
-- 🖱️ Automatically right-clicks when the bobber is detected.
-- ⚙️ Configurable detection confidence and scan delay.
+- 🖱️ Automatically right-clicks when the subtitle is detected.
 - 🐍 Written in Python.
 
 ## 📋 Requirements
 
 - Python 3.10 or newer recommended.
 - Minecraft running on your computer.
+- Minecraft subtitles enabled.
 - The following Python libraries:
   - `PyAutoGUI`
   - `opencv-python`
   - `NumPy`
-  - `Pillow` (used by PyAutoGUI for screenshot functionality)
+  - `Pillow`
 
 ## 📁 Project Structure
 
@@ -26,16 +26,16 @@ Make sure both files are in the **same folder**:
 
 ```text
 FK-Fish-Farm-Bot-Minecraft/
-├── main.py
+├── phishing farm_1.py
 ├── fishing_bobber.png
 └── README.md
 ```
 
-- `main.py` — The Python script that runs the bot.
-- `fishing_bobber.png` — The template image used to detect the fishing bobber.
+- `phishing farm_1.py` — The Python script that runs the bot.
+- `fishing_bobber.png` — The image template used to detect the “Fishing Bobber Splashes” subtitle.
 - `README.md` — Project documentation.
 
-**Important:** The image file must be named exactly `fishing_bobber.png` and must be located in the same directory as `main.py`.
+**Important:** The image must be named exactly `fishing_bobber.png` and must be located in the same folder as the Python script.
 
 ## 📦 Installation
 
@@ -47,7 +47,6 @@ Download Python from [python.org](https://www.python.org/downloads/) if you don'
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/FK-Fish-Farm-Bot-Minecraft.git
-cd FK-Fish-Farm-Bot-Minecraft
 ```
 
 Replace `YOUR-USERNAME` with your GitHub username.
@@ -64,68 +63,46 @@ python -m pip install pyautogui opencv-python numpy pillow
 
 On some systems, you may need to use `python3` instead of `python`.
 
-## 🖼️ Setting Up the Bobber Image
+## 🎮 Minecraft Setup
 
-1. Open Minecraft and cast your fishing rod.
-2. Take a screenshot of the fishing bobber.
-3. Crop the image tightly around the bobber.
-4. Save the image as `fishing_bobber.png`.
-5. Place it in the same folder as `main.py`.
+Before running the bot, you **must enable subtitles** in Minecraft.
 
-For best results, use a clear image that matches the bobber's appearance in your game.
+1. Open Minecraft.
+2. Go to **Options → Music & Sounds**.
+3. Find **Show Subtitles** and turn it **ON**.
+4. Join a world and equip your fishing rod.
+5. Cast your fishing line into the water.
+6. Make sure subtitles are visible on your screen when the fishing bobber splashes.
+
+The bot detects the **“Fishing Bobber Splashes”** subtitle using the image saved as `fishing_bobber.png`.
+
+### 🖼️ Creating the subtitle image
+
+1. Enable subtitles in Minecraft.
+2. Cast your fishing rod and wait for the **“Fishing Bobber Splashes”** subtitle to appear.
+3. Take a screenshot while the subtitle is visible.
+4. Crop the screenshot tightly around the subtitle text.
+5. Save the cropped image as `fishing_bobber.png`.
+6. Place it in the same folder as `phishing farm_1.py`.
+
+For best results, use a clear screenshot with minimal background around the text. The font, subtitle position, resolution, and resource pack can affect detection accuracy.
 
 ## 🚀 Usage
 
-1. Start Minecraft.
+1. Start Minecraft and enable subtitles.
 2. Equip your fishing rod and cast your fishing line.
-3. Make sure `main.py` and `fishing_bobber.png` are in the same folder.
-4. Run the script:
+3. Make sure `phishing farm_1.py` and `fishing_bobber.png` are in the same folder.
+4. Open a terminal in the project folder.
+5. Run the script:
 
 ```bash
-python main.py
+python "phishing farm_1.py"
 ```
 
-The bot will continuously scan the bottom-right portion of your screen. When the bobber image is detected with sufficient confidence, it will perform a right-click.
+The bot continuously scans the bottom-right portion of your screen. When the **“Fishing Bobber Splashes”** subtitle matches the template image with sufficient confidence, the bot performs a right-click.
 
 To stop the bot, press `Ctrl + C` in the terminal.
 
-## ⚙️ Configuration
-
-You can adjust these settings in `main.py`:
-
-```python
-IMAGE_PATH = "fishing_bobber.png"
-CONFIDENCE = 0.8
-CHECK_DELAY = 0.5
-```
-
-| Setting | Description |
-|---|---|
-| `IMAGE_PATH` | Path to the bobber template image. |
-| `CONFIDENCE` | Minimum matching score required to trigger a click. Lower values may detect more matches but can cause false detections. |
-| `CHECK_DELAY` | Delay in seconds between screen checks. |
-
-The bot scans the bottom-right 40% of the screen, starting at 60% of the screen width and height.
-
-## 🛠️ Troubleshooting
-
-**The bobber is not detected**
-- Make sure `fishing_bobber.png` matches the bobber's appearance.
-- Try lowering `CONFIDENCE` to `0.7`.
-- Make sure the bobber is visible within the scanned screen area.
-
-**The script cannot find the image**
-- Check that the file is named exactly `fishing_bobber.png`.
-- Make sure the image and `main.py` are in the same folder.
-- Run the script from the project directory.
-
-**The script cannot take screenshots or click**
-- Check your operating system's screen-capture and accessibility permissions.
-- Make sure Minecraft is visible and running.
-
-**The script crashes when loading the image**
-- Make sure `fishing_bobber.png` is a valid image file.
-- Install the dependencies again using the installation command above.
 
 ## ⚠️ Disclaimer
 
