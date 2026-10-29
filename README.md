@@ -25,7 +25,6 @@ A Python-based Minecraft fishing bot that uses image recognition to detect the *
 Make sure both files are in the **same folder**:
 
 ```text
-FK-Fish-Farm-Bot-Minecraft/
 ├── phishing farm_1.py
 ├── fishing_bobber.png
 └── README.md
